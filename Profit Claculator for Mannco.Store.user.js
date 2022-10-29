@@ -10,7 +10,7 @@
 
 // @homepageURL  https://github.com/LucasHenriqueDiniz/Profit-Claculator-for-Mannco.Store
 // @supportURL   https://github.com/LucasHenriqueDiniz/Profit-Claculator-for-Mannco.Store/issues
-// @downloadURL
+// @downloadURL  https://github.com/LucasHenriqueDiniz/Profit-Claculator-for-Mannco.Store/raw/main/Profit%20Claculator%20for%20Mannco.Store.user.js
 
 
 // ==/UserScript==
