@@ -1,4 +1,4 @@
-# Profit-Claculator-for-Mannco.Store
+# Profit-Calculator-for-Mannco.Store
 
 ## Instalation
 - Install [Tampermonkey](https://www.tampermonkey.net/). 
