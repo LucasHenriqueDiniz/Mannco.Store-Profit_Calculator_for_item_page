@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Profit Claculator for Mannco.Store
+// @name         Profit Calculator for Mannco.Store
 // @namespace    https://github.com/LucasHenriqueDiniz/Profit-Claculator-for-Mannco.Store
-// @version      0.1
+// @version      0.2
 // @description  tshow the profit of the current mannco item
 // @author       Lucas Diniz
 // @match        *://mannco.store/item/*
@@ -11,6 +11,8 @@
 // @homepageURL  https://github.com/LucasHenriqueDiniz/Profit-Claculator-for-Mannco.Store
 // @supportURL   https://github.com/LucasHenriqueDiniz/Profit-Claculator-for-Mannco.Store/issues
 // @downloadURL  https://github.com/LucasHenriqueDiniz/Profit-Claculator-for-Mannco.Store/raw/main/Profit%20Claculator%20for%20Mannco.Store.user.js
+// @updateURL  https://github.com/LucasHenriqueDiniz/Profit-Claculator-for-Mannco.Store/raw/main/Profit%20Claculator%20for%20Mannco.Store.user.js
+
 
 
 // ==/UserScript==
@@ -25,7 +27,7 @@ function CheckLucro(Valor) {
     var LucroLiquido = Math.abs(Math.round((Valor - PreçoVenda) * 100) / 100)
     var Fees = Math.round((5/100 * PreçoVenda) * 100) / 100
 
-    console.log(LucroLiquido, Fees, Valor)
+    //console.log(LucroLiquido, Fees, Valor)
 
     if (PreçoVenda < 0.05) {
         LucroBruto = LucroLiquido
@@ -37,8 +39,10 @@ function CheckLucro(Valor) {
 }
 var ProfitLabel = document.createElement('th')
 ProfitLabel.scope = 'col'
+ProfitLabel.title = 'The profit is calculated by = [fees - (SellValue - BuyValue)] you can put you mouse over each profit to see the values and etc'
 ProfitLabel.textContent = "Profit"
 document.querySelector("#content > div:nth-child(4) > div > div > div.col-xl-8.col-lg-5.mt-md-3 > table > tbody > tr:nth-child(1)").appendChild(ProfitLabel)
+
 
 var Quant = document.querySelector("#content > div:nth-child(4) > div > div > div.col-xl-8.col-lg-5.mt-md-3 > table > tbody").childElementCount - 1
 
@@ -52,5 +56,10 @@ for (var i = 1; Quant >= i; i++) {
     document.querySelector("#content > div:nth-child(4) > div > div > div.col-xl-8.col-lg-5.mt-md-3 > table > tbody").children[i].appendChild(NewElement)
     }
 
+if (CaixaDeValor.value != '') {
 document.querySelector("#content > div:nth-child(4) > div > div > div.col-xl-4.col-lg-7 > p").textContent = "Profit with current BuyOrder: " + CheckLucro(CaixaDeValor.value)
+} else {
+document.querySelector("#content > div:nth-child(4) > div > div > div.col-xl-4.col-lg-7 > p").textContent = ''
+}
 })();
+
