@@ -1,8 +1,8 @@
 # Profit-Calculator-for-Mannco.Store
-Adds:
-• RemoveAll Buy Orders button
-• Excel export for Buy Orders
-• Excel export for Transactions
+##Adds:
+- RemoveAll Buy Orders button
+- Excel export for Buy Orders
+- Excel export for Transactions
 
 ## Instalation
 - Install [Tampermonkey](https://www.tampermonkey.net/). 
