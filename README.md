@@ -3,6 +3,7 @@ Add's:
 - RemoveAll Buy Orders button
 - Excel export for Buy Orders
 - Excel export for Transactions
+- ...
 
 ## Instalation
 - Install [Tampermonkey](https://www.tampermonkey.net/). 
