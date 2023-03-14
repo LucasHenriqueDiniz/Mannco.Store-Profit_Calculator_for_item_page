@@ -1,5 +1,5 @@
 # Profit-Calculator-for-Mannco.Store
-##Adds:
+Add's:
 - RemoveAll Buy Orders button
 - Excel export for Buy Orders
 - Excel export for Transactions
