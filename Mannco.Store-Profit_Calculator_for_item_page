@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mannco.Store - Profit Calculator for item page
 // @namespace    https://github.com/LucasHenriqueDiniz/Profit-Claculator-for-Mannco.Store
-// @version      1
+// @version      1.1
 // @description  shows the profit of the current mannco item for each different buy order
 // @author       Lucas Diniz
 // @match        *://mannco.store/item/*
@@ -27,7 +27,7 @@
   const priceBoxBox = document.querySelector("#content > div:nth-child(4) > div > div > div.col-xl-4.col-lg-7")
   // small fixes
   document.querySelector("#content > div:nth-child(4) > div").style.borderRadius = '1rem';
-  priceBoxBox.childNodes[2].textContent = ''
+  document.querySelector("#content > div:nth-child(4) > div > div > div.col-xl-4.col-lg-7 > p").textContent = ''
   priceBoxBox.childNodes[1].style.marginBottom = '25px';
   priceBoxBox.childNodes[1].style.fontSize = '1.5rem'
   priceBox.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
@@ -121,6 +121,16 @@
       priceBox.value = currentBuyOrder;
       updateAfterFees()
     });
+    currentBuyOrderRaw.parentNode.addEventListener('mouseover', () => {
+      currentBuyOrderRaw.parentNode.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+      currentBuyOrderRaw.parentNode.style.transition = 'background-color 0.2s ease 0s';
+    });
+
+    currentBuyOrderRaw.parentNode.addEventListener('mouseout', () => {
+      currentBuyOrderRaw.parentNode.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+      currentBuyOrderRaw.parentNode.style.transition = 'background-color 0.2s ease 0s';
+    });
+
 
     var NewElement = document.createElement('td')
     NewElement.textContent = ("$" + CheckLucro(currentBuyOrder))
